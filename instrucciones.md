@@ -9,6 +9,8 @@
 - Debo mantener una unidad en las URLs.
 
 
+
+
 ## API Blog
 
 ## Obtener los datos de los autores
@@ -27,6 +29,8 @@ Method: GET
 Url: /api/blog/post
 Headers: XXX
 Body: XXX
+
+Response: Un array con todos los posts
 
 
 
