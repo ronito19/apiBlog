@@ -1,5 +1,5 @@
 const getAll = (req, res) => {
-    // Implement your logic here
+    res.send('Todo funciona muy pero muy bien!!');
 }
 
 module.exports = { getAll }
