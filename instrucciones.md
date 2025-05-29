@@ -16,7 +16,7 @@
 ## Obtener los datos de los autores
 
 Method: GET
-Url: /api/autores
+Url: /apiblog/autores
 Headers: XXX
 Body: XXX
 
@@ -26,11 +26,32 @@ Response: Un array con toda la informacion de los autores
 ## Obtener los datos de los posts
 
 Method: GET
-Url: /api/post
+Url: /apiblog/posts
 Headers: XXX
 Body: XXX
 
 Response: Un array con todos los posts
 
 
+## Recuperar un autor a partir de su ID
+
+Method: GET
+Url: /apiblog/autores/<AUTORID>
+Headers: XXX
+Body: XXX
+
+Response: Un objeto con los datos del autor
+Error Response: 404 + Mensaje
+
+
+
+## Recuperar un post a partir de su ID
+
+Method: GET
+Url: /apiblog/posts/<POSTID>
+Headers: XXX
+Body: XXX
+
+Response: Un objeto con los datos del post
+Error Response: 404 + Mensaje
 
