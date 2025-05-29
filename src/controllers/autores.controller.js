@@ -5,4 +5,14 @@ const getAll = async (req, res) => {
     res.json(autores);
 }
 
-module.exports = { getAll }
+
+const getById = async (req, res) => {
+    const { autorId } = req.params;
+
+    const autor = await Autores.selectById(autorId);
+    if (!autor) return res.status(404).json({ message: 'El ID del autor no existe' });
+
+    res.json(autor);
+}
+
+module.exports = { getAll, getById }

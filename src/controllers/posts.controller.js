@@ -5,4 +5,14 @@ const getAll = async (req, res) => {
     res.json(posts);
 }
 
-module.exports = { getAll }
+
+const getById = async (req, res) => {
+    const { postId } = req.params;
+
+    const post = await Posts.selectById(postId);
+    if (!post) return res.status(404).json({ message: 'El ID del post no existe' });
+
+    res.json(post);
+}
+
+module.exports = { getAll, getById }

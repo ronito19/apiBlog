@@ -1,8 +1,9 @@
 const router = require('express').Router();
 
-const { getAll } = require('../../controllers/autores.controller');
+const { getAll, getById } = require('../../controllers/autores.controller');
 
-// GET /api/autores
+// GET /apiblog/autores
 router.get('/', getAll)
+router.get('/:autorId', getById);
 
 module.exports = router;
