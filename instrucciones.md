@@ -16,7 +16,7 @@
 ## Obtener los datos de los autores
 
 Method: GET
-Url: /api/blog/autores
+Url: /api/autores
 Headers: XXX
 Body: XXX
 
@@ -26,7 +26,7 @@ Response: Un array con toda la informacion de los autores
 ## Obtener los datos de los posts
 
 Method: GET
-Url: /api/blog/post
+Url: /api/post
 Headers: XXX
 Body: XXX
 

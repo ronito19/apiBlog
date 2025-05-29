@@ -1,5 +1,8 @@
-const getAll = (req, res) => {
-    res.send('Todo funciona muy pero muy bien!!');
+const Posts = require('../models/posts.model');
+
+const getAll = async (req, res) => {
+    const posts = await Posts.selectAll();
+    res.json(posts);
 }
 
 module.exports = { getAll }
