@@ -1,8 +1,14 @@
 const Autores = require('../models/autores.model');
 
 const getAll = async (req, res) => {
-    const autores = await Autores.selectAll();
-    res.json(autores);
+    const { page = 1, limit = 5 } = req.query;
+
+    const autores = await Autores.selectAll(Number(page), Number(limit));
+    res.json({
+        page,
+        limit,
+        results: autores
+    });
 }
 
 

@@ -1,8 +1,14 @@
 const Posts = require('../models/posts.model');
 
 const getAll = async (req, res) => {
-    const posts = await Posts.selectAll();
-    res.json(posts);
+    const { page = 1, limit = 5 } = req.query;
+
+    const posts = await Posts.selectAll(Number(page), Number(limit));
+    res.json({
+        page,
+        limit,
+        result: posts
+    });
 }
 
 

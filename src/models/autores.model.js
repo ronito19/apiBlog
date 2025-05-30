@@ -1,8 +1,12 @@
 const db = require('../config/db');
 
 // SELECT * FROM apiblog/autores;
-const selectAll = async () => {
-    const [result] = await db.query('select * from apiblog.autores');
+const selectAll = async (page, limit) => {
+    const [result] = await db.query(`
+        select * from apiblog.autores
+        limit ?
+        offset ?
+    `, [limit, (page - 1) * limit]);
     return result;
 }
 

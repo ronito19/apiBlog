@@ -1,12 +1,13 @@
 @host = http://localhost:3000
 
-GET {{host}}/api/autores
+GET {{host}}/api/autores?page=1&limit=5
 
 ###
-GET {{host}}/api/posts
+GET {{host}}/api/posts?page=2&limit=5
 
 ### 
 GET {{host}}/api/autores/5
 
 ###
-GET {{host}}/api/posts/5
+GET {{host}}/api/posts/1
+

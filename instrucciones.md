@@ -55,3 +55,22 @@ Body: XXX
 Response: Un objeto con los datos del post
 Error Response: 404 + Mensaje
 
+
+## Crear un nuevo autor
+
+Method: POST
+Url: /apiblog/autores
+Headers: XXX
+Body: nombre, email, imagen
+
+Response: El objeto que representa el nuevo autor creado
+
+
+## Crear un nuevo post
+
+Method: POST
+Url: /apiblog/posts
+Headers: XXX
+Body: titulo, descripcion, fecha_creacion, categoria
+
+Response: El objeto que representa el nuevo post creado
