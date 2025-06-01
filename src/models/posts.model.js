@@ -28,4 +28,12 @@ const selectById = async (postId) => {
 }
 
 
-module.exports = { selectAll, selectById };
+const insert = async ({ titulo, descripcion, fecha_creacion, categoria }) => {
+    const [result] = await db.query(`
+        insert into apiblog.posts (titulo, descripcion, fecha_creacion, categoria) values (?, ?, ?, ?)
+    `, [titulo, descripcion, fecha_creacion, categoria]);
+    return result;
+}
+
+
+module.exports = { selectAll, selectById, insert };

@@ -21,4 +21,10 @@ const getById = async (req, res) => {
     res.json(autor);
 }
 
-module.exports = { getAll, getById }
+
+const create = async (req, res) => {
+    const result = await Autores.insert(req.body);
+    res.json(result);
+}
+
+module.exports = { getAll, getById, create }
