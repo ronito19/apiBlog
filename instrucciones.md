@@ -66,6 +66,11 @@ Body: nombre, email, imagen
 Response: El objeto que representa el nuevo autor creado
 
 
+## Pagina para pasar una imagen a Base64
+
+https://emiliocobos.net/demos/conversor-de-imagenes-a-base64/
+
+
 ## Crear un nuevo post
 
 Method: POST
