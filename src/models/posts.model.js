@@ -22,7 +22,7 @@ const selectAll = async (page, limit) => {
  * @throws {Error} Si ocurre un error durante la consulta a la base de datos.
  */
 const selectById = async (postId) => {
-    const [result] = await db.query('SELECT posts.id, posts.titulo, posts.descripcion, posts.fecha_creacion, posts.categoria, autores.id AS autores_id, autores.nombre AS autor_nombre, autores.email AS autor_email FROM posts JOIN autores ON posts.autores_id = autores.id WHERE posts.id = ?', [postId])
+    const [result] = await db.query('SELECT posts.id, posts.titulo, posts.descripcion, posts.fecha_creacion, posts.categoria, autores.id AS autores_id, autores.nombre AS autor_nombre, autores.email AS autor_email, autores.imagen AS autor_imagen FROM posts JOIN autores ON posts.autores_id = autores.id WHERE posts.id = ?', [postId])
     if (result.length === 0) return null;
     return result[0];
 }
