@@ -28,10 +28,10 @@ const selectById = async (postId) => {
 }
 
 
-const insert = async ({ titulo, descripcion, fecha_creacion, categoria }) => {
+const insert = async ({ titulo, descripcion, fecha_creacion, categoria, autores_id }) => {
     const [result] = await db.query(`
-        insert into apiblog.posts (titulo, descripcion, fecha_creacion, categoria) values (?, ?, ?, ?)
-    `, [titulo, descripcion, fecha_creacion, categoria]);
+        insert into apiblog.posts (titulo, descripcion, fecha_creacion, categoria, autores_id) values (?, ?, ?, ?, ?)
+    `, [titulo, descripcion, fecha_creacion, categoria, autores_id]);
     return result;
 }
 

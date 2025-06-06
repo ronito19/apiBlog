@@ -1,4 +1,5 @@
 const db = require('../config/db');
+const axios = require('axios');
 
 // SELECT * FROM apiblog/autores;
 const selectAll = async (page, limit) => {
@@ -36,8 +37,9 @@ const selectById = async (autorId) => {
 
 
 const insert = async ({ nombre, email, imagen }) => {
-    // Decodificar la imagen de base64 a binario
-    const bufferImagen = Buffer.from(imagen, 'base64');
+    // Descarga la imagen desde la URL
+    const response = await axios.get(imagen, { responseType: 'arraybuffer' });
+    const bufferImagen = Buffer.from(response.data);
 
     const [result] = await db.query(`
         insert into apiblog.autores (nombre, email, imagen) values (?, ?, ?)
