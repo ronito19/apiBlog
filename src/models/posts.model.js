@@ -38,8 +38,16 @@ const insert = async ({ titulo, descripcion, fecha_creacion, categoria }) => {
 
 const selectByAuthor = async (autorId) => {
     const [result] = await db.query(`
-        SELECT posts.id, posts.titulo, posts.descripcion, posts.fecha_creacion, posts.categoria
+        SELECT 
+            posts.id AS post_id, 
+            posts.titulo, 
+            posts.descripcion, 
+            posts.fecha_creacion, 
+            posts.categoria,
+            autores.id AS autor_id,
+            autores.nombre AS autor_nombre
         FROM posts
+        JOIN autores ON posts.autores_id = autores.id
         WHERE posts.autores_id = ?
         `, [autorId]);
     return result;

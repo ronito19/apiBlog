@@ -12,7 +12,7 @@ GET {{host}}/api/autores/8
 GET {{host}}/api/posts/6
 
 ###
-GET {{host}}/api/posts/author/10
+GET {{host}}/api/posts/author/1
 
 ### 
 POST {{host}}/api/autores
