@@ -27,4 +27,14 @@ const create = async (req, res) => {
     res.json(result);
 }
 
-module.exports = { getAll, getById, create }
+
+const getByAuthor = async (req, res) => {
+    const { autorId } = req.params;
+
+    const posts = await Posts.selectByAuthor(Number(autorId));
+    if (!posts.length) {
+        return res.status(404).json({ message: 'No se encontraron posts para este autor'});
+    }
+}
+
+module.exports = { getAll, getById, create, getByAuthor }

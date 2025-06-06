@@ -36,4 +36,14 @@ const insert = async ({ titulo, descripcion, fecha_creacion, categoria }) => {
 }
 
 
-module.exports = { selectAll, selectById, insert };
+const selectByAuthor = async (autorId) => {
+    const [result] = await db.query(`
+        SELECT posts.id, posts.titulo, posts.descripcion, posts.fecha_creacion, posts.categoria
+        FROM posts
+        WHERE posts.autors_id = ?
+        `);
+    return result;
+}
+
+
+module.exports = { selectAll, selectById, insert, selectByAuthor };

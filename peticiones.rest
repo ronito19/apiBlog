@@ -6,10 +6,10 @@ GET {{host}}/api/autores?page=1&limit=5
 GET {{host}}/api/posts?page=1&limit=5
 
 ### 
-GET {{host}}/api/autores/11
+GET {{host}}/api/autores/8
 
 ###
-GET {{host}}/api/posts/5
+GET {{host}}/api/posts/6
 
 ### 
 POST {{host}}/api/autores
