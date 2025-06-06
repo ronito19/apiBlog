@@ -11,6 +11,9 @@ GET {{host}}/api/autores/8
 ###
 GET {{host}}/api/posts/6
 
+###
+GET {{host}}/api/posts/author/10
+
 ### 
 POST {{host}}/api/autores
 Content-Type: application/json

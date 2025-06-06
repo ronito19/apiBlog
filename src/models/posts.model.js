@@ -40,8 +40,8 @@ const selectByAuthor = async (autorId) => {
     const [result] = await db.query(`
         SELECT posts.id, posts.titulo, posts.descripcion, posts.fecha_creacion, posts.categoria
         FROM posts
-        WHERE posts.autors_id = ?
-        `);
+        WHERE posts.autores_id = ?
+        `, [autorId]);
     return result;
 }
 

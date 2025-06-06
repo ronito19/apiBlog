@@ -35,6 +35,7 @@ const getByAuthor = async (req, res) => {
     if (!posts.length) {
         return res.status(404).json({ message: 'No se encontraron posts para este autor'});
     }
+    res.json(posts);
 }
 
 module.exports = { getAll, getById, create, getByAuthor }
